@@ -2,7 +2,7 @@
 @use "../utils/mixins" as m;
 
 .main-btn {
-  @include m.transition(border-color, color, background-color, translate);
+  @include m.transition(border-color, color, background-color, scale);
   display: block;
   font-size: clamp(1.6rem, 2vw, 1.8rem);
   font-weight: 700;
@@ -27,7 +27,7 @@
   }
 
   &:active {
-    translate: 0 0.5rem;
+    scale: 0.97;
   }
 
   &--secondary {
