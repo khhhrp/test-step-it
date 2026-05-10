@@ -1,0 +1,81 @@
+@use "../base/variables" as v;
+
+.hero {
+  align-content: center;
+  background-color: v.$color-purple-100;
+  background-image: url("/src/img/hero-background.avif");
+  background-size: cover;
+  background-position: left center;
+  border-radius: 7.2rem;
+  padding-top: 5.4rem;
+  padding-bottom: 15.6rem;
+  padding-inline: 3rem;
+
+  @media (width < 1024px) {
+    padding-bottom: 7.8rem;
+  }
+
+  @media (width < 425px) {
+    padding-block: 3.3rem;
+    padding-inline: 0;
+    border-radius: 5.7rem;
+  }
+
+  &__inner {
+    padding-inline: 1.5rem;
+
+    @media (width < 768px) {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (width < 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left,
+  &__right {
+    overflow: hidden;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1.6rem;
+    max-width: 50.3rem;
+    color: v.$color-gray-900;
+  }
+
+  &__left-badges {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+  }
+
+  &__title,
+  &__text {
+    text-wrap-style: pretty;
+  }
+
+  &__title {
+    font-size: clamp(3rem, 4vw, 5rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    font-weight: 600;
+    line-height: 1.39;
+  }
+}

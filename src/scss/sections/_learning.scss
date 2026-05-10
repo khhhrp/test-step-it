@@ -1,0 +1,84 @@
+@use "../base/variables" as v;
+
+.learning {
+  background-color: v.$color-gray-100;
+  border-radius: 7.2rem;
+  margin-bottom: 6rem;
+  padding-block: 12rem;
+
+  @media (width < 1024px) {
+    padding-block: 6rem;
+  }
+
+  @media (width < 768px) {
+    padding-block: 3rem;
+    border-radius: 6.6rem;
+  }
+
+  @media (width < 425px) {
+    padding-block: 1.5rem;
+    border-radius: 5.1rem;
+  }
+
+  &__title {
+    text-align: center;
+    color: v.$color-gray-900;
+    padding-bottom: 3.2rem;
+
+    @media (width < 768px) {
+      padding-bottom: 1.6rem;
+    }
+
+    @media (width < 425px) {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 2.4rem;
+    align-items: start;
+    padding-top: 4rem;
+
+    @media (width < 768px) {
+      padding-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (width < 425px) {
+      padding-top: 1rem;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    width: 61.5384%;
+
+    @media (width < 768px) {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  &__right {
+    position: sticky;
+    top: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    flex-grow: 1;
+
+    & > * {
+      flex-grow: 1;
+      flex-basis: 20rem;
+    }
+
+    @media (width < 768px) {
+      position: static;
+      flex-wrap: nowrap;
+      padding-top: 1.6rem;
+    }
+  }
+}

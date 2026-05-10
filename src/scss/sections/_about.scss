@@ -1,0 +1,72 @@
+@use "../base/variables" as v;
+
+.about {
+  &__cards {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding-top: 4.8rem;
+    padding-bottom: 6rem;
+
+    & > * {
+      flex: 1 1 20rem;
+    }
+
+    @media (width <=768px) {
+      padding-top: 2.4rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 3.6rem;
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+
+    @media (width <=1024px) {
+      flex-wrap: wrap;
+      padding-bottom: 6rem;
+    }
+
+    @media (width <=768px) {
+      padding-top: 3rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    width: 37.2308%;
+    flex-shrink: 0;
+
+    @media (width <=1024px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.6rem, 3vw, 3.8rem);
+    font-width: 600;
+    line-height: 1.21;
+  }
+
+  &__text {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    font-weight: 600;
+    line-height: 1.39;
+  }
+
+  &__right {
+    flex-grow: 1;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

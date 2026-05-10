@@ -1,0 +1,68 @@
+@use "../base/variables" as v;
+
+.booking {
+  background-color: v.$color-gray-800;
+  border-radius: 7.2rem;
+  color: v.$color-white;
+  padding-block: 12rem;
+  margin-top: 6rem;
+
+  @media (width < 1024px) {
+    padding-block: 6rem;
+  }
+
+  @media (width < 768px) {
+    padding-block: 3rem;
+    border-radius: 6.6rem;
+  }
+
+  @media (width < 425px) {
+    padding-block: 1.5rem;
+    border-radius: 5.1rem;
+  }
+
+  &__title {
+    text-align: center;
+    padding-bottom: 7.2rem;
+
+    @media (width < 768px) {
+      padding-bottom: 3.6rem;
+    }
+
+    @media (width < 425px) {
+      padding-bottom: 2.4rem;
+    }
+  }
+
+  &__content {
+    padding-inline: 8.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.4rem;
+
+    @media (width < 1024px) {
+      padding-inline: 3.6rem;
+    }
+
+    @media (width < 768px) {
+      flex-wrap: wrap;
+      padding-inline: 0;
+    }
+  }
+
+  &__left {
+    display: flex;
+    min-width: 63.8rem;
+    flex-grow: 1;
+
+    @media (width <= 1200px) {
+      min-width: auto;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-grow: 1;
+  }
+}

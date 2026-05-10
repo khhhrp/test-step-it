@@ -1,0 +1,43 @@
+@use "../base/variables" as v;
+
+.space {
+  position: relative;
+  padding-top: 10%;
+  padding-inline: 5%;
+
+  &__inner {
+    background-color: v.$color-purple-500;
+    padding-top: 7.6rem;
+    padding-bottom: 2.6rem;
+    padding-inline: 2.4rem;
+    border-radius: 2.4rem;
+    border-top-right-radius: 0;
+    margin-top: -1px;
+  }
+
+  &__decor {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+  }
+
+  &__back {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__badges {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+}

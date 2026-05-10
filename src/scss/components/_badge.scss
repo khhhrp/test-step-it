@@ -1,0 +1,15 @@
+@use "../base/variables" as v;
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.39;
+  color: v.$color-black;
+  background-color: v.$color-white;
+  border-radius: 2.5rem;
+  padding: 1.2rem;
+  white-space: nowrap;
+}

@@ -1,0 +1,92 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.dropdown {
+  $root: &;
+  display: block;
+  position: relative;
+  z-index: 3;
+  white-space: nowrap;
+
+  &__item {
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4285;
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    background-color: transparent;
+    border-radius: 0.8rem;
+    background-color: v.$color-blue;
+    color: v.$color-white;
+
+    @media (hover: hover) {
+      cursor: pointer;
+
+      &:hover {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        #{$root}__menu {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 100%;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    overflow: hidden;
+  }
+
+  &__menu-item {
+    display: block;
+    width: 100%;
+  }
+
+  &__menu-link {
+    @include m.transition(color, background-color);
+    display: block;
+    padding: 0.8rem 1.6rem;
+    background-color: v.$color-blue;
+    color: v.$color-white;
+    width: 100%;
+
+    @media (hover: hover) {
+      cursor: pointer;
+
+      &:hover {
+        color: v.$color-blue;
+        background-color: v.$color-white;
+      }
+    }
+  }
+
+  &--transparent {
+    #{$root}__item {
+      color: v.$color-black;
+      background-color: transparent;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: v.$color-blue;
+          color: v.$color-white;
+        }
+      }
+    }
+  }
+}

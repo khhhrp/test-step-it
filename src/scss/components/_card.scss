@@ -1,0 +1,47 @@
+@use "../base/variables" as v;
+
+.card {
+  $root: &;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  padding: 2.4rem;
+  border-radius: 2.4rem;
+  background-color: v.$color-gray-100;
+  color: v.$color-gray-900;
+
+  &__title {
+    font-size: clamp(2rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__text {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    font-weight: 600;
+    line-height: 1.39;
+  }
+
+  &__icon {
+    display: flex;
+    width: 3.4rem;
+    aspect-ratio: 1;
+    background-color: currentColor;
+    border-radius: 50%;
+
+    svg {
+      color: v.$color-white;
+    }
+  }
+
+  &--accented {
+    background-color: v.$color-purple-400;
+    color: v.$color-white;
+
+    #{$root}__icon {
+      svg {
+        color: v.$color-gray-900;
+      }
+    }
+  }
+}

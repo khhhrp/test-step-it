@@ -1,0 +1,17 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.main-link {
+  @include m.transition(color);
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 1.4285;
+  color: v.$color-gray-700;
+
+  @media (hover: hover) {
+    &:hover {
+      color: v.$color-accent;
+    }
+  }
+}

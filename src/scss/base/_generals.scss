@@ -1,0 +1,52 @@
+@use "../base/variables" as v;
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: v.$font-family-base;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.container {
+  max-width: 192rem;
+  padding-inline: 6rem;
+  margin-inline: auto;
+
+  @media (width < 1024px) {
+    padding-inline: 4rem;
+  }
+
+  @media (width < 768px) {
+    padding-inline: 2rem;
+  }
+
+  @media (width < 425px) {
+    padding-inline: 1rem;
+  }
+}
+
+.inner {
+  --inner-inline-gap: 6rem;
+  max-width: 142rem;
+  margin-inline: auto;
+  padding-inline: var(--inner-inline-gap);
+
+  @media (width < 768px) {
+    --inner-inline-gap: 3rem;
+  }
+
+  @media (width < 425px) {
+    --inner-inline-gap: 1.5rem;
+  }
+}
+
+h2 {
+  font-size: clamp(3rem, 4vw, 5rem);
+  font-weight: 600;
+  line-height: 1.2;
+}

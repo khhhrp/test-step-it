@@ -1,1 +1,36 @@
-@use "./scss/custom-reset";
+//base
+@use "./scss/base/custom-reset";
+@use "./scss/base/variables";
+@use "./scss/base/generals";
+
+//components
+@use "./scss/components/overlay";
+@use "./scss/components/main-select";
+@use "./scss/components/dropdown";
+@use "./scss/components/icons";
+@use "./scss/components/main-btn";
+@use "./scss/components/main-link";
+@use "./scss/components/burger-btn";
+@use "./scss/components/badge";
+@use "./scss/components/space";
+@use "./scss/components/card";
+@use "./scss/components/module-card";
+@use "./scss/components/info-card";
+@use "./scss/components/booking-card";
+@use "./scss/components/main-form";
+@use "./scss/components/accordion";
+
+//layouts
+@use "./scss/layouts/header";
+@use "./scss/layouts/footer";
+
+//sections
+@use "./scss/sections/hero";
+@use "./scss/sections/about";
+@use "./scss/sections/learning";
+@use "./scss/sections/booking";
+@use "./scss//sections/faq";
+
+//utils
+@use "./scss/utils/helpers";
+@use "./scss/utils/mixins";

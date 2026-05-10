@@ -1,0 +1,100 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.accordion {
+  $root: &;
+  @include m.transition(color, background-color);
+  background-color: v.$color-gray-100;
+  border-radius: 1.6rem;
+  color: v.$color-gray-900;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: v.$color-accent;
+      color: v.$color-white;
+    }
+  }
+
+  &[open] {
+    background-color: v.$color-accent;
+    color: v.$color-white;
+
+    #{$root}__icon {
+      &::after {
+        rotate: 0deg;
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    cursor: pointer;
+  }
+
+  &__header,
+  &__text {
+    padding-bottom: 1.6rem;
+    padding-inline: 3.6rem;
+
+    @media (width < 768px) {
+      padding-inline: 2.6rem;
+    }
+
+    @media (width < 425px) {
+      padding-inline: 1.6rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3rem;
+    padding-top: 1.6rem;
+    list-style: none;
+
+    @media (width < 768px) {
+      padding-inline: 2.6rem;
+    }
+
+    @media (width < 425px) {
+      padding-inline: 1.6rem;
+    }
+  }
+
+  &__title,
+  &__text {
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__icon {
+    position: relative;
+    background-color: v.$color-white;
+    border-radius: 0.8rem;
+    width: 3.6rem;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+
+    &::before,
+    &::after {
+      @include m.transition(rotate);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      height: 0.2rem;
+      width: 1.2rem;
+      border-radius: 0.1rem;
+      background-color: v.$color-gray-900;
+    }
+
+    &::after {
+      rotate: 90deg;
+    }
+  }
+}

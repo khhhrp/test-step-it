@@ -1,0 +1,14 @@
+@use "../base/variables" as v;
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(v.$color-accent, 0.7);
+  backdrop-filter: blur(0.2rem);
+  z-index: 4;
+
+  &--active {
+    display: block;
+  }
+}

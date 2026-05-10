@@ -1,0 +1,16 @@
+@use "sass:list";
+@use "../base/variables" as v;
+
+@mixin transition($properties...) {
+  $result: ();
+
+  @each $prop in $properties {
+    $result: list.append(
+      $result,
+      $prop v.$transition-duration v.$transition-timing,
+      $separator: comma
+    );
+  }
+
+  transition: $result;
+}

@@ -1,0 +1,40 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.main-select {
+  $root: &;
+  position: relative;
+
+  &__inner {
+    @include m.transition(background-color, color);
+    appearance: none;
+    border: none;
+    outline: none;
+    padding: 0.8rem 3.2rem 0.8rem 1.6rem;
+    background-color: transparent;
+    border-radius: 0.8rem;
+    font-family: inherit;
+
+    @media (hover: hover) {
+      cursor: pointer;
+
+      &:hover {
+        background-color: v.$color-blue;
+        color: v.$color-white;
+
+        & ~ #{$root}__icon {
+          color: v.$color-white;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    @include m.transition(color);
+    position: absolute;
+    inset-block: 0;
+    margin-block: auto;
+    right: 1.2rem;
+    pointer-events: none;
+  }
+}

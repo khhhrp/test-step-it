@@ -1,0 +1,37 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.main-btn {
+  @include m.transition(border-color, color, background-color, translate);
+  display: block;
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.39;
+  background-color: v.$color-gray-800;
+  line-height: 1.2;
+  color: v.$color-white;
+  height: 6rem;
+  border-radius: 1.6rem;
+  padding-inline: 3.6rem;
+  max-width: 100%;
+  border: 0.2rem solid transparent;
+
+  @media (hover: hover) {
+    cursor: pointer;
+
+    &:hover {
+      border-color: v.$color-gray-800;
+      color: v.$color-gray-800;
+      background-color: transparent;
+    }
+  }
+
+  &:active {
+    translate: 0 0.5rem;
+  }
+
+  &--secondary {
+    background-color: v.$color-accent;
+    color: v.$color-white;
+  }
+}

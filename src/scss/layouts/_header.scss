@@ -1,0 +1,76 @@
+@use "../base/variables" as v;
+@use "../utils/mixins" as m;
+
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 5.2rem;
+  font-family: v.$font-family-secondary;
+
+  @media (width < 1440px) {
+    justify-content: space-between;
+  }
+  &__inner {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+
+    @media (width < 1440px) {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      row-gap: 1.2rem;
+      padding-top: max(env(safe-area-inset-top), 8rem);
+      padding-right: max(env(safe-area-inset-right), 2rem);
+      padding-bottom: max(env(safe-area-inset-bottom), 4rem);
+      padding-left: max(env(safe-area-inset-left), 2rem);
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 30rem;
+      height: 100dvh;
+      background-color: rgba(v.$color-white, 0.95);
+      box-shadow: 0.4rem 0 1.5rem rgba(v.$color-black, 0.1);
+      translate: -100%;
+      overflow-y: auto;
+
+      &--open {
+        display: flex;
+        translate: 0;
+      }
+    }
+
+    @media (width < 768px) {
+      width: 25rem;
+    }
+  }
+
+  &__nav,
+  &__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+
+    @media (width < 1440px) {
+      display: contents;
+    }
+  }
+
+  &__nav {
+    flex-wrap: wrap;
+  }
+
+  &__select-inner,
+  &__link {
+    font-weight: 500;
+  }
+
+  &__link {
+    padding: 0.8rem 1.6rem;
+  }
+}
