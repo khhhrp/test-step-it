@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("resize", () => {
     if (window.innerWidth !== windowWidth) {
-      closeMenu();
+      if (menu.classList.contains("header__inner--open")) {
+        closeMenu();
+      }
       windowWidth = window.innerWidth;
     }
   });
