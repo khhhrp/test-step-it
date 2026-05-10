@@ -7,6 +7,17 @@
   position: relative;
   z-index: 3;
   white-space: nowrap;
+  max-width: 100%;
+
+  @media (width < 1440px) {
+    white-space: wrap;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+  }
 
   &__item {
     position: relative;
@@ -17,7 +28,6 @@
     align-items: center;
     column-gap: 0.4rem;
     padding: 0.8rem 1.6rem;
-    background-color: transparent;
     border-radius: 0.8rem;
     background-color: v.$color-blue;
     color: v.$color-white;
@@ -32,6 +42,21 @@
         #{$root}__menu {
           opacity: 1;
           visibility: visible;
+        }
+      }
+    }
+
+    @media (width < 1440px) {
+      flex-direction: column;
+      border-radius: 0;
+      background-color: transparent;
+      color: v.$color-black;
+      align-items: start;
+      row-gap: 1.4rem;
+
+      @media (hover: hover) {
+        &:hover {
+          color: v.$color-blue;
         }
       }
     }
@@ -51,6 +76,14 @@
     border-bottom-left-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
     overflow: hidden;
+
+    @media (width < 1440px) {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      display: none;
+      border-radius: 0;
+    }
   }
 
   &__menu-item {
@@ -74,6 +107,17 @@
         background-color: v.$color-white;
       }
     }
+
+    @media (width < 1440px) {
+      background-color: transparent;
+      color: v.$color-black;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
   }
 
   &--transparent {
@@ -85,6 +129,29 @@
         &:hover {
           background-color: v.$color-blue;
           color: v.$color-white;
+        }
+      }
+
+      @media (width < 1440px) {
+        @media (hover: hover) {
+          &:hover {
+            background-color: transparent;
+            color: v.$color-blue;
+          }
+        }
+      }
+    }
+  }
+
+  &--open {
+    #{$root}__menu {
+      display: block;
+    }
+
+    #{$root}__item {
+      @media (hover: hover) {
+        &:hover {
+          color: v.$color-black;
         }
       }
     }

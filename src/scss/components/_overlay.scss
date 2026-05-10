@@ -1,14 +1,18 @@
 @use "../base/variables" as v;
+@use "../utils/mixins" as m;
 
 .overlay {
-  display: none;
+  @include m.transition(opacity, visibility);
   position: fixed;
   inset: 0;
   background-color: rgba(v.$color-accent, 0.7);
   backdrop-filter: blur(0.2rem);
   z-index: 4;
+  visibility: hidden;
+  opacity: 0;
 
   &--active {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const burgerBtn = document.querySelector(".burger-btn");
   const menu = document.querySelector(".header__inner");
   const overlay = document.querySelector(".overlay");
+  const dropdown = document.querySelectorAll(".dropdown");
 
   const menuClose = document.querySelectorAll("[data-menu-close]");
   const menuToggle = document.querySelectorAll("[data-menu-toggle]");
@@ -28,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuClose.forEach((el) => el.addEventListener("click", closeMenu));
   menuToggle.forEach((el) => el.addEventListener("click", toggleMenu));
+  dropdown.forEach((el) =>
+    el.addEventListener("click", () => toggleClass(el, "dropdown--open")),
+  );
 
   window.addEventListener("resize", () => {
     if (window.innerWidth !== windowWidth) {

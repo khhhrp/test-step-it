@@ -7,6 +7,7 @@
   background-color: v.$color-gray-100;
   border-radius: 1.6rem;
   color: v.$color-gray-900;
+  appearance: none;
 
   @media (hover: hover) {
     &:hover {
@@ -51,6 +52,10 @@
     column-gap: 3rem;
     padding-top: 1.6rem;
     list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
 
     @media (width < 768px) {
       padding-inline: 2.6rem;

@@ -18,16 +18,16 @@
     column-gap: 2rem;
 
     @media (width < 1440px) {
-      display: none;
+      @include m.transition(translate);
+      display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       row-gap: 1.2rem;
-      padding-top: max(env(safe-area-inset-top), 8rem);
+      padding-top: 8rem;
+      padding-bottom: 4rem;
       padding-right: max(env(safe-area-inset-right), 2rem);
-      padding-bottom: max(env(safe-area-inset-bottom), 4rem);
       padding-left: max(env(safe-area-inset-left), 2rem);
-
       position: fixed;
       top: 0;
       left: 0;
@@ -40,7 +40,6 @@
       overflow-y: auto;
 
       &--open {
-        display: flex;
         translate: 0;
       }
     }
@@ -65,7 +64,6 @@
     flex-wrap: wrap;
   }
 
-  &__select-inner,
   &__link {
     font-weight: 500;
   }

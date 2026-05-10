@@ -13,20 +13,22 @@ img {
 }
 
 .container {
+  --container-inline-gap: 6rem;
   max-width: 192rem;
-  padding-inline: 6rem;
+  padding-right: max(env(safe-area-inset-right), var(--container-inline-gap));
+  padding-left: max(env(safe-area-inset-left), var(--container-inline-gap));
   margin-inline: auto;
 
   @media (width < 1024px) {
-    padding-inline: 4rem;
+    --container-inline-gap: 4rem;
   }
 
   @media (width < 768px) {
-    padding-inline: 2rem;
+    --container-inline-gap: 2rem;
   }
 
   @media (width < 425px) {
-    padding-inline: 1rem;
+    --container-inline-gap: 1rem;
   }
 }
 
