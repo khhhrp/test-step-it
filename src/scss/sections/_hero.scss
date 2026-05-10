@@ -1,7 +1,6 @@
 @use "../base/variables" as v;
 
 .hero {
-  align-content: center;
   background-color: v.$color-purple-100;
   background-image: url("/src/img/hero-background.avif");
   background-size: cover;
@@ -45,16 +44,17 @@
     overflow: hidden;
   }
 
-  &__left {
+  &__description {
     display: flex;
     flex-direction: column;
     align-items: start;
+    padding-bottom: 1rem;
     row-gap: 1.6rem;
     max-width: 50.3rem;
     color: v.$color-gray-900;
   }
 
-  &__left-badges {
+  &__badges {
     display: flex;
     align-items: center;
     width: 100%;

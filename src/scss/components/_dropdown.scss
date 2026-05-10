@@ -20,6 +20,7 @@
   }
 
   &__item {
+    @include m.transition(color);
     position: relative;
     font-size: 1.4rem;
     font-weight: 500;
@@ -146,14 +147,6 @@
   &--open {
     #{$root}__menu {
       display: block;
-    }
-
-    #{$root}__item {
-      @media (hover: hover) {
-        &:hover {
-          color: v.$color-black;
-        }
-      }
     }
   }
 }
